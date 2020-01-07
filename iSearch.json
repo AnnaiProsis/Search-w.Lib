@@ -4,16 +4,24 @@
 	"eula": "",
 	"vendor": "iProsis",
 	"license": "",
-	"id": "com.iProsis.sample.search",
+	"id": "com.iProsis.search",
 	"newInstancePrefix": "iSearch",
 	"icon" : "https://1001freedownloads.s3.amazonaws.com/icon/thumb/358904/Organic-Search-icon.png",
-	"version": "2.0.0",
+	"version": "3.0.0",
 	"imports": ["datasource"],
 	"webcomponents": [
 		{
 			"kind": "main",
-			"tag": "com-iprosis-sample-search",
-			"url": "https://annaiProsis.github.io/searchak/webcomponent.js",
+			"tag": "com-iprosis-search",
+			"url": "https://annaiProsis.github.io/Search-w.Lib/webcomponent.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+			
+		},
+		{
+			"kind": "style",
+			"tag": "com-iprosis-search-aps",
+			"url": "https://annaiProsis.github.io/Search-w.Lib/webcomponent.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 			
