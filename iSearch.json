@@ -6,7 +6,7 @@
 	"license": "",
 	"id": "com.iProsis.search",
 	"newInstancePrefix": "iSearch",
-	"icon" : "https://1001freedownloads.s3.amazonaws.com/icon/thumb/358904/Organic-Search-icon.png",
+	"icon" : "http://www.iconarchive.com/download/i51290/awicons/vista-artistic/search.ico",
 	"version": "3.0.0",
 	"imports": ["datasource"],
 	"webcomponents": [
