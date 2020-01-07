@@ -1,0 +1,121 @@
+{
+	"name": "iSearch-autocomplete",
+	"description": "iSearch Widget",
+	"eula": "",
+	"vendor": "iProsis",
+	"license": "",
+	"id": "com.iProsis.sample.search",
+	"newInstancePrefix": "iSearch",
+	"icon" : "https://1001freedownloads.s3.amazonaws.com/icon/thumb/358904/Organic-Search-icon.png",
+	"version": "2.0.0",
+	"imports": ["datasource"],
+	"webcomponents": [
+		{
+			"kind": "main",
+			"tag": "com-iprosis-sample-search",
+			"url": "https://annaiProsis.github.io/searchak/webcomponent.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+			
+		}
+
+	],
+	
+	"properties": {
+		"width": {
+			"type": "number",
+			"default": 300
+		},
+		"height": {
+			"type": "number",
+			"default": 50
+		},
+		"selectedValue": {
+			"type": "string",
+			"description": "Key result set"
+		}
+	},
+	"methods": {
+		"getSelectedValue": {
+			"returnType": "string",
+			"description": "Returns the selected value",
+			"parameters": []
+		},
+		"getSelectedText": {
+			"returnType": "string",
+			"description": "Returns the selected text",
+			"parameters": []
+		},
+		"setMembers": {
+			"description": "Sets the data",
+			"parameters": [
+				{
+					"name": "newData",
+					"type": "MemberInfo[]",
+					"description": "Array of string items"
+				},
+				{
+					"name": "display",
+					"type": "string",
+					"description": "display key(k), text(t) or both(kt)"
+				}
+			]
+		},
+		"getMembers": {
+			"returnType": "string[]",
+			"description": "Returns the data",
+			"parameters": []
+		},
+		"getDisplayType": {
+			"returnType": "string",
+			"description": "Returns display key (key , text or value)",
+			"parameters": []
+		},
+		"setDisplayType":{
+			"description": "sets display type",
+			"parameters": [
+				{
+					"name": "displayType",
+					"type": "string",
+					"description": "key 'k' , text 't'  or key and text 'kt')"
+				}
+			]
+		},
+		"getPlaceholder": {
+			"returnType": "string",
+			"description": "Returns placeholder value",
+			"parameters": []
+		},
+		"setPlaceholder":{
+			"description": "sets placeholder",
+			"parameters": [
+				{
+					"name": "placeholder",
+					"type": "string",
+					"description": "set placegolder, default 'Search'"
+				}
+			]
+		},
+		"setEnableSuggestions":{
+			"description": "Enable or Disable suggestions",
+			"parameters": [
+				{
+					"name": "bool",
+					"type": "boolean",
+					"description": "boolean: enable suggestions(true), disable(false)"
+				}
+			]
+		},
+		
+		"isEnableSuggestions":{
+			"returnType": "boolean",
+			"description": "Returns true if suggestions Enabled and false otherwise",
+			"parameters": []
+		}
+	},
+	"events": {
+		"onSearch": {
+			"description": "On search event"
+		}
+	}
+}
