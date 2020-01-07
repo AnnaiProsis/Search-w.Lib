@@ -24,6 +24,8 @@ tmpl.innerHTML = `
 					<tr>
 					<td>Show Suggestions</td>
 					<td><input id="suggest_val" type="text" name="suggest" size="10" maxlength="5"></td>
+					</tr>
+					<tr>
 					<td>Show search button</td>
 					<td><input id="showbutton_val" type="text" name="showbutton" size="10" maxlength="5"></td>
 					</tr>

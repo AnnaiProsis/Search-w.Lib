@@ -19,9 +19,9 @@
 			
 		},
 		{
-			"kind": "style",
+			"kind": "styling",
 			"tag": "com-iprosis-search-aps",
-			"url": "https://annaiProsis.github.io/Search-w.Lib/webcomponent.js",
+			"url": "https://annaiProsis.github.io/Search-w.Lib/aps_webcomponent.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 			
