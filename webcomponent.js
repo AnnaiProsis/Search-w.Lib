@@ -1,6 +1,6 @@
 (function()  {
     let d3Script = document.createElement('script');
-    d3Script.src = ' https://sapui5.hana.ondemand.com/resources/sap-ui-core.js';
+    d3Script.src = 'https://openui5.hana.ondemand.com/1.48.4/resources/sap-ui-core.js';
     d3Script.async = false;
 	document.head.appendChild(d3Script);
 	
@@ -24,11 +24,13 @@
             const bcRect = this.getBoundingClientRect();
             this._widgetHeight = bcRect.height;
             this._widgetWidth = bcRect.width;
-            this.redraw();
 		}
 		
 
 		constructor() {
+			var view = sap.ui.xmlview({
+				viewContent: '<mvc:View height="100%" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" > <Page title="OpenUI5 Bind aggregation example" class="sapUiContentPadding" showNavButton="false" > <subHeader> <Toolbar> <SearchField id="search-field"/> </Toolbar> </subHeader> <content> <Panel width="auto" class="sapUiResponsiveMargin"> <headerToolbar> <Toolbar height="3rem"> <Title text="{/Heading}"/> </Toolbar> </headerToolbar> <content> <FormattedText htmlText="{/Abstract}"/> </content> </Panel> <List headerText="Related topics" id="related-topics"></List> <List headerText="Infobox" id="infobox"></List> </content> </Page> </mvc:View>'
+			});
 			//Constants
             // if (!window._d3){
             //     window._d3 = d3;
@@ -65,79 +67,79 @@
 		}
 
 
-		console.log("This :");
-		console.log(this);
+		// console.log("This :");
+		// console.log(this);
 
-		if (this._alive) {
-			console.log('5');
-			return;
-		} else {
+		// if (this._alive) {
+		// 	console.log('5');
+		// 	return;
+		// } else {
 
-			console.log('10');
-			var currentDiv = "DIV_" + Math.floor(Math.random() * 1000);
-			console.log('20');
-			var currentSf = "SF_" + Math.floor(Math.random() * 1000);
-			// currentDiv = "DIV_" + this.$().attr('id');
-			// var currentSf = "SF_" + this.$().attr('id');
+		// 	console.log('10');
+		// 	var currentDiv = "DIV_" + Math.floor(Math.random() * 1000);
+		// 	console.log('20');
+		// 	var currentSf = "SF_" + Math.floor(Math.random() * 1000);
+		// 	// currentDiv = "DIV_" + this.$().attr('id');
+		// 	// var currentSf = "SF_" + this.$().attr('id');
 
-			// Create Search Field control and load data
-			this.oSearchField = new sap.m.SearchField(currentSf, {
-				enableSuggestions: true,
-				search: function (oEvent) {
-					console.log("Im here");
-					var text = "";
-					var key = "";
-					var isFire = true;
-					if (isSuggestions === false) {
-						text = oEvent.getParameter("query");
-						key = text;
-					} else {
-						var item = oEvent.getParameter("suggestionItem");
-						if (item) {
-							text = item.getText();
-							key = item.getKey();
-						} else if (oEvent.getParameter("query") === selectedText) {
-							isFire = false;
-						}
-					}
-					//		oEvent.getParameter("query");
-					if (isFire) {
-						selectedValue = key;
-						selectedText = text;
-						that.firePropertiesChanged(["SelectedValue"]);
-						that.firePropertiesChanged(["SelectedText"]);
-						that.fireEvent("onSearch");
-					}
-				},
+		// 	// Create Search Field control and load data
+		// 	this.oSearchField = new sap.m.SearchField(currentSf, {
+		// 		enableSuggestions: true,
+		// 		search: function (oEvent) {
+		// 			console.log("Im here");
+		// 			var text = "";
+		// 			var key = "";
+		// 			var isFire = true;
+		// 			if (isSuggestions === false) {
+		// 				text = oEvent.getParameter("query");
+		// 				key = text;
+		// 			} else {
+		// 				var item = oEvent.getParameter("suggestionItem");
+		// 				if (item) {
+		// 					text = item.getText();
+		// 					key = item.getKey();
+		// 				} else if (oEvent.getParameter("query") === selectedText) {
+		// 					isFire = false;
+		// 				}
+		// 			}
+		// 			//		oEvent.getParameter("query");
+		// 			if (isFire) {
+		// 				selectedValue = key;
+		// 				selectedText = text;
+		// 				that.firePropertiesChanged(["SelectedValue"]);
+		// 				that.firePropertiesChanged(["SelectedText"]);
+		// 				that.fireEvent("onSearch");
+		// 			}
+		// 		},
 
-				suggest: function (oEvent) {
-					var value = oEvent.getParameter("suggestValue");
-					var filters = [];
-					if (value !== "") {
-						filters = that.getFilters(value);
-					} else {
-						filters = that.getFilters("999999iprosis");
-					}
-					that.oSearchField.getBinding("suggestionItems").filter(filters);
-					that.oSearchField.suggest();
-				}
-			});
+		// 		suggest: function (oEvent) {
+		// 			var value = oEvent.getParameter("suggestValue");
+		// 			var filters = [];
+		// 			if (value !== "") {
+		// 				filters = that.getFilters(value);
+		// 			} else {
+		// 				filters = that.getFilters("999999iprosis");
+		// 			}
+		// 			that.oSearchField.getBinding("suggestionItems").filter(filters);
+		// 			that.oSearchField.suggest();
+		// 		}
+		// 	});
 
-			//this.innerHTML = '<div id="' + currentDiv + '"> ';
+		// 	//this.innerHTML = '<div id="' + currentDiv + '"> ';
 			
-			let divContainer = document.createElement('div');
-			divContainer.id = "xyz";
-			//this.oSearchField.placeAt("xyz");
+		// 	let divContainer = document.createElement('div');
+		// 	divContainer.id = "xyz";
+		// 	//this.oSearchField.placeAt("xyz");
 			
-			this._shadowRoot.appendChild(divContainer);
-			console.log("Shadow root :");
-			console.log(this._shadowRoot);
-			console.log("Seaarch  field :");
-			console.log(this.oSearchField);
-			//this.id = currentDiv;
+		// 	this._shadowRoot.appendChild(divContainer);
+		// 	console.log("Shadow root :");
+		// 	console.log(this._shadowRoot);
+		// 	console.log("Seaarch  field :");
+		// 	console.log(this.oSearchField);
+		// 	//this.id = currentDiv;
 			
-			this._alive = true;
-		}
+		// 	this._alive = true;
+		// }
 
 					
 		}  // end of constructor
