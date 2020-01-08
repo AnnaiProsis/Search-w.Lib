@@ -73,12 +73,12 @@
 			return;
 		} else {
 
-			// console.log('10');
-			// var currentDiv = "DIV_" + Math.floor(Math.random() * 1000);
-			// console.log('20');
-			// var currentSf = "SF_" + Math.floor(Math.random() * 1000);
-			currentDiv = "DIV_" + this.$().attr('id');
-			var currentSf = "SF_" + this.$().attr('id');
+			console.log('10');
+			var currentDiv = "DIV_" + Math.floor(Math.random() * 1000);
+			console.log('20');
+			var currentSf = "SF_" + Math.floor(Math.random() * 1000);
+			// currentDiv = "DIV_" + this.$().attr('id');
+			// var currentSf = "SF_" + this.$().attr('id');
 
 			// Create Search Field control and load data
 			this.oSearchField = new sap.m.SearchField(currentSf, {
