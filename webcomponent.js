@@ -43,6 +43,100 @@
 			this._suggest=true;
 			this._showbutton = true;
 			this._props = {};
+
+
+			var dataResultSet = null;
+		var isEnabled = null;
+		var placeHolder = null;
+		var isSearchButton = null;
+		var isSuggestions = null;
+		var maxLength = null;
+		var selectedDimension = null;
+		
+		var displayKey = null;
+		var selectedValue = null;
+		var selectedText = null;
+		var reload = false;
+		var Data = null;
+		this.oSearchField = null;
+		
+		if (window.sap && sap.zen && sap.zen.designmode) {
+			var x = "dd";
+		}
+
+
+		console.log("This :");
+		console.log(this);
+
+		if (this._alive) {
+			console.log('5');
+			return;
+		} else {
+
+			console.log('10');
+			var currentDiv = "DIV_" + Math.floor(Math.random() * 1000);
+			console.log('20');
+			var currentSf = "SF_" + Math.floor(Math.random() * 1000);
+
+			// Create Search Field control and load data
+			this.oSearchField = new sap.m.SearchField(currentSf, {
+				enableSuggestions: true,
+				search: function (oEvent) {
+					console.log("Im here");
+					var text = "";
+					var key = "";
+					var isFire = true;
+					if (isSuggestions === false) {
+						text = oEvent.getParameter("query");
+						key = text;
+					} else {
+						var item = oEvent.getParameter("suggestionItem");
+						if (item) {
+							text = item.getText();
+							key = item.getKey();
+						} else if (oEvent.getParameter("query") === selectedText) {
+							isFire = false;
+						}
+					}
+					//		oEvent.getParameter("query");
+					if (isFire) {
+						selectedValue = key;
+						selectedText = text;
+						that.firePropertiesChanged(["SelectedValue"]);
+						that.firePropertiesChanged(["SelectedText"]);
+						that.fireEvent("onSearch");
+					}
+				},
+
+				suggest: function (oEvent) {
+					var value = oEvent.getParameter("suggestValue");
+					var filters = [];
+					if (value !== "") {
+						filters = that.getFilters(value);
+					} else {
+						filters = that.getFilters("999999iprosis");
+					}
+					that.oSearchField.getBinding("suggestionItems").filter(filters);
+					that.oSearchField.suggest();
+				}
+			});
+
+			//this.innerHTML = '<div id="' + currentDiv + '"> ';
+			
+			let divContainer = document.createElement('div');
+			divContainer.id = "xyz";
+			//this.oSearchField.placeAt("xyz");
+			
+			this._shadowRoot.appendChild(divContainer);
+			console.log("Shadow root :");
+			console.log(this._shadowRoot);
+			console.log("Seaarch  field :");
+			console.log(this.oSearchField);
+			//this.id = currentDiv;
+			
+			this._alive = true;
+		}
+
 					
 		}  // end of constructor
 
