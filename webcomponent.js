@@ -30,9 +30,9 @@
 
 		constructor() {
 			//Constants
-            if (!window._d3){
-                window._d3 = d3;
-            }
+            // if (!window._d3){
+            //     window._d3 = d3;
+            // }
 			super();
 			this._shadowRoot = this.attachShadow({mode: 'open'});
 			this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
@@ -73,10 +73,12 @@
 			return;
 		} else {
 
-			console.log('10');
-			var currentDiv = "DIV_" + Math.floor(Math.random() * 1000);
-			console.log('20');
-			var currentSf = "SF_" + Math.floor(Math.random() * 1000);
+			// console.log('10');
+			// var currentDiv = "DIV_" + Math.floor(Math.random() * 1000);
+			// console.log('20');
+			// var currentSf = "SF_" + Math.floor(Math.random() * 1000);
+			currentDiv = "DIV_" + this.$().attr('id');
+			var currentSf = "SF_" + this.$().attr('id');
 
 			// Create Search Field control and load data
 			this.oSearchField = new sap.m.SearchField(currentSf, {
