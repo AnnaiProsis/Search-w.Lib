@@ -6,10 +6,7 @@
 	
 	let tmpl = document.createElement('template');
 	tmpl.innerHTML = `
-	div#content {
-		border: 1px solid black;
-		height: 400px;
-	}
+
 	`;
 
 	d3Script.onload = () => 
