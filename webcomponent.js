@@ -5,52 +5,54 @@
 	// document.head.appendChild(d3Script);
 	
 	let tmpl = document.createElement('template');
-	tmpl.innerHTML = `</style> <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><style>
+	tmpl.innerHTML = `
+	<style>
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
-	* {
-		padding: 0;
-		margin: 0;
-		box-sizing: border-box;
-	}
-	
-	body {
-		background-color: #232C31;
-	}
-	
-	.search-bar {
-		position: absolute;
-		top: 100px;
-		left: 100px;
-	}
-	
-	input {
-		position: relative;
-		padding-left: 20px;
-		font: 1em "Helvetica", sans-serif;
-		width: 200px;
-		height: 50px;
-		border-radius: 5px 0px 0px 5px;
-		border: none;
-		background-color: #151A1D;
-		outline: none;
-		color: white;
-	}
-	
-	.search-icon {
-		position: absolute;
-		left: 200px;
-		width: 50px;
-		height: 50px;
-		border: none;
-		border-radius: 0px 5px 5px 0px;
-		background-color: #42D8D3;
-	}
-	
-	.search-icon {
-		cursor: pointer;
-		font-size: 1em;
-	}
-	<div class="search-bar">
+body {
+    background-color: #232C31;
+}
+
+.search-bar {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+input {
+    position: relative;
+    padding-left: 20px;
+    font: 1em "Helvetica", sans-serif;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+    background-color: #151A1D;
+    outline: none;
+    color: white;
+}
+
+.search-icon {
+    position: absolute;
+    left: 200px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    background-color: #42D8D3;
+}
+
+.search-icon {
+    cursor: pointer;
+    font-size: 1em;
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<div class="search-bar">
     <input type="text" name="search" placeholder="Search..." onfocus="this.placeholder=''" onblur="this.placeholder='Search...'"></input>
     <button class="search-icon"><span class="search-btn fa fa-search"></span></button>
 </div>
