@@ -76,11 +76,11 @@ input {
 	.autocomplete-active {
 	background-color: DodgerBlue !important; 
 	color: #ffffff; 
-	
+
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <div class="search-bar">
-    <input type="text" name="search" placeholder="Search..." onfocus="this.placeholder=''" onblur="this.placeholder='Search...'"></input>
+    <input id="myInput" type="text" name="search" placeholder="Search..." onfocus="this.placeholder=''" onblur="this.placeholder='Search...'"></input>
     <button class="search-icon"><span class="search-btn fa fa-search"></span></button>
 </div>
 
