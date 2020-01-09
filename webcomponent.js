@@ -1,6 +1,6 @@
 (function()  {
     let d3Script = document.createElement('script');
-    d3Script.src = 'https://openui5.hana.ondemand.com/1.48.4/resources/sap-ui-core.js';
+    d3Script.src = 'https://sapui5.hana.ondemand.com/resources/sap-ui-core.js';
     d3Script.async = false;
 	document.head.appendChild(d3Script);
 	
@@ -29,8 +29,8 @@
 
 		constructor() {
 			var view = sap.ui.xmlview({
-				viewContent: '<mvc:View height="100%" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" > <Page title="OpenUI5 Bind aggregation example" class="sapUiContentPadding" showNavButton="false" > <subHeader> <Toolbar> <SearchField id="search-field"/> </Toolbar> </subHeader> <content> <Panel width="auto" class="sapUiResponsiveMargin"> <headerToolbar> <Toolbar height="3rem"> <Title text="{/Heading}"/> </Toolbar> </headerToolbar> <content> <FormattedText htmlText="{/Abstract}"/> </content> </Panel> <List headerText="Related topics" id="related-topics"></List> <List headerText="Infobox" id="infobox"></List> </content> </Page> </mvc:View>'
-			});
+				viewContent: '<mvc:View height="100%" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" > <Page title="OpenUI5 Bind aggregation example" class="sapUiContentPadding" showNavButton="false" > <subHeader> <Toolbar> <SearchField id="search-field"/> </Toolbar> </subHeader> </Page> </mvc:View>'
+				});
 			//Constants
             // if (!window._d3){
             //     window._d3 = d3;
