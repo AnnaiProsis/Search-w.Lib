@@ -8,7 +8,10 @@
 	tmpl.innerHTML = `
 	
 	`;
-	class ISearch extends HTMLElement {
+	d3Script.onload = () => 
+
+    customElements.define('com-sap-teched-gauge-solution-exe5', class Gauge extends HTMLElement {
+	//class ISearch extends HTMLElement {
 		constructor() {
 			var view = sap.ui.xmlview({
 				viewContent: '<mvc:View height="100%" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" > <Page title="OpenUI5 Bind aggregation example" class="sapUiContentPadding" showNavButton="false" > <subHeader> <Toolbar> <SearchField id="search-field"/> </Toolbar> </subHeader>  </Page> </mvc:View>'
@@ -207,7 +210,8 @@
 			getSelectedDimension(){
 				return this.dim;
 			}
-
+		});
+		})();
 			// chooseData(){
 			// 	if (this.display == 'k'){
 			// 		this.dataModel = this.dataModel0;
@@ -220,11 +224,11 @@
 			// 	}
 			// }
 
-	} //end of class
+//	} //end of class
 
 	/* Define web component - input: tag and class */
-	customElements.define('com-iprosis-sample-search', ISearch);
-})();
+//	customElements.define('com-iprosis-sample-search', ISearch);
+//})();
 	// d3Script.onload = () => 
     // customElements.define('com-iprosis-search', class ISearch extends HTMLElement {
 
@@ -385,8 +389,4 @@
 	// 		//	this._shadowRoot.getElementById("showbutton_val").value = changedProperties["showbutton"];
 	// 		}
 	// 	}
-		
-
-	
-
 	// }); //end of class
