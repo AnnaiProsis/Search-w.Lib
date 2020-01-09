@@ -1,12 +1,15 @@
 (function()  {
     let d3Script = document.createElement('script');
-    d3Script.src = 'https://sapui5.hana.ondemand.com/resources/sap-ui-core.js';
+    d3Script.src = 'https://openui5.hana.ondemand.com/resources/sap-ui-core.js';
     d3Script.async = false;
 	document.head.appendChild(d3Script);
 	
 	let tmpl = document.createElement('template');
 	tmpl.innerHTML = `
-
+	div#content {
+		border: 1px solid black;
+		height: 400px;
+	}
 	`;
 
 	d3Script.onload = () => 
