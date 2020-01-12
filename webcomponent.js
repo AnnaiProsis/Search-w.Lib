@@ -49,15 +49,10 @@ $(function() {
 			super();
 			let shadow = this.attachShadow({ mode: 'open' });
 			shadow.appendChild(tmpl.content.cloneNode(true));
-
-
 			// document.addEventListener('DOMContentLoaded', function() {
 			// 	var elems = document.querySelectorAll('.autocomplete');
 			// 	var instances = M.Autocomplete.init(elems, options);
-			//   });
-
-
-			
+			//   });		
 		}  // end of constructor
 
 		/* initialization of selected value */
@@ -86,23 +81,8 @@ $(function() {
 		/* setter of datalist to autocomplete*/
 		setMembers(newdata,displayType) {
 			 this.display = displayType;
-			 M.Autocomplete.init(shadow.querySelector('#autocomplete'), newdata);
-			// 	for (let index = 0; index < newdata.length; index++) {
-			// 			this.dataModel0[index] = newdata[index].displayId;
-			// 			this.dataModel1[index] = newdata[index].description;
-			// 			this.dataModel2[index] = newdata[index].displayId + ' ' + newdata[index].description;			
-			// 	};	
-			// 	//chooseData();
-			// 	if (this.display == 'k'){
-			// 		this.dataModel = this.dataModel0;
-			// 	}
-			// 	else if (this.display == 't'){
-			// 		this.dataModel = this.dataModel1;
-			// 	}
-			// 	else if (this.display == 'kt'){
-			// 		this.dataModel=this.dataModel2;
-			// 	}
-			// 	this.dim = newdata[0].dimensionId;
+			 M.Autocomplete.init(querySelectorAll('.autocomplete'), newdata);
+			
 			}
 
 			getPlaceholder(){
