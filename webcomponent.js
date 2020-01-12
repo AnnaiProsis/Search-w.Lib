@@ -42,9 +42,6 @@ $(function() {
 	`;
 	class ISearch extends HTMLElement {
 		constructor() {
-			// var view = sap.ui.xmlview({
-			// 	viewContent: '<mvc:View height="100%" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" > <Page title="OpenUI5 Bind aggregation example" class="sapUiContentPadding" showNavButton="false" > <subHeader> <Toolbar> <SearchField id="search-field"/> </Toolbar> </subHeader>  </Page> </mvc:View>'
-			// });
 			super();
 			let shadow = this.attachShadow({ mode: 'open' });
 			shadow.appendChild(tmpl.content.cloneNode(true));
