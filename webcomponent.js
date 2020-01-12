@@ -55,103 +55,103 @@ $(function() {
 				var instances = M.Autocomplete.init(elems, options);
 			  });
 
-			  
-			let that = this;
-			that.index = 0;
-			that.showSuggestions = true;
-			that.display = 'k';
-			that.input = shadow.querySelector('#myInput');
-			that.dim = '';
-			function autocomplete(that) {
 
-				let inp = that.input;
-				let currentFocus;
+			// let that = this;
+			// that.index = 0;
+			// that.showSuggestions = true;
+			// that.display = 'k';
+			// that.input = shadow.querySelector('#myInput');
+			// that.dim = '';
+			// function autocomplete(that) {
+
+			// 	let inp = that.input;
+			// 	let currentFocus;
 			
-				inp.addEventListener('input', function(e) {
-					if (that.showSuggestions){
-					let val = this.value;
-					closeAllLists();
-					currentFocus = -1;
-					let a = document.createElement('div');
-					a.id = this.id + 'autocomplete-list';
-					a.classList.add('autocomplete-items');
-					this.parentNode.appendChild(a);
+			// 	inp.addEventListener('input', function(e) {
+			// 		if (that.showSuggestions){
+			// 		let val = this.value;
+			// 		closeAllLists();
+			// 		currentFocus = -1;
+			// 		let a = document.createElement('div');
+			// 		a.id = this.id + 'autocomplete-list';
+			// 		a.classList.add('autocomplete-items');
+			// 		this.parentNode.appendChild(a);
 
-					for (let i = 0; i < that.dataModel.length; i++) {
-						if (
-							// that.dataModel[i]
-							// 	.substr(0, val.length)
-							// 	.toUpperCase() == val.toUpperCase()
-							that.dataModel[i].toLowerCase().indexOf(val.toLowerCase())>-1
-						) {
-							let b = document.createElement('div');
-							b.innerHTML =
-								'<strong>' +
-								that.dataModel[i].substr(0, val.length) +
-								'</strong>' +
-								that.dataModel[i].substr(val.length);
-							b.addEventListener('click', function(e) {
-								that.selectedValue = this.innerText;
-								inp.value = this.innerText;
-								closeAllLists();
-								that.index = i;
-							});
-							a.appendChild(b);
-						}
-					}
-					} // end auto suggest
-				});
-				inp.addEventListener('keydown', function(e) {
-					var x = shadow.getElementById(
-						this.id + 'autocomplete-list'
-					);
-					if (x) x = x.getElementsByTagName('div');
-					// arrow down
-					if (e.keyCode == 40) {
-						currentFocus++;
-						addActive(x);
-						// arrow up
-					} else if (e.keyCode == 38) {
-						currentFocus--;
-						addActive(x);
-					} else if (e.keyCode == 13) {
-						//enter
-						e.preventDefault();
-						if (currentFocus > -1) {
-							if (x) x[currentFocus].click();
-						}
-					}
-				});
+			// 		for (let i = 0; i < that.dataModel.length; i++) {
+			// 			if (
+			// 				// that.dataModel[i]
+			// 				// 	.substr(0, val.length)
+			// 				// 	.toUpperCase() == val.toUpperCase()
+			// 				that.dataModel[i].toLowerCase().indexOf(val.toLowerCase())>-1
+			// 			) {
+			// 				let b = document.createElement('div');
+			// 				b.innerHTML =
+			// 					'<strong>' +
+			// 					that.dataModel[i].substr(0, val.length) +
+			// 					'</strong>' +
+			// 					that.dataModel[i].substr(val.length);
+			// 				b.addEventListener('click', function(e) {
+			// 					that.selectedValue = this.innerText;
+			// 					inp.value = this.innerText;
+			// 					closeAllLists();
+			// 					that.index = i;
+			// 				});
+			// 				a.appendChild(b);
+			// 			}
+			// 		}
+			// 		} // end auto suggest
+			// 	});
+			// 	inp.addEventListener('keydown', function(e) {
+			// 		var x = shadow.getElementById(
+			// 			this.id + 'autocomplete-list'
+			// 		);
+			// 		if (x) x = x.getElementsByTagName('div');
+			// 		// arrow down
+			// 		if (e.keyCode == 40) {
+			// 			currentFocus++;
+			// 			addActive(x);
+			// 			// arrow up
+			// 		} else if (e.keyCode == 38) {
+			// 			currentFocus--;
+			// 			addActive(x);
+			// 		} else if (e.keyCode == 13) {
+			// 			//enter
+			// 			e.preventDefault();
+			// 			if (currentFocus > -1) {
+			// 				if (x) x[currentFocus].click();
+			// 			}
+			// 		}
+			// 	});
 
-				function addActive(x) {
-					if (!x) return false;
-					removeActive(x);
-					if (currentFocus >= x.length) currentFocus = 0;
-					if (currentFocus < 0) currentFocus = x.length - 1;
-					x[currentFocus].classList.add('autocomplete-active');
-				}
-				function removeActive(x) {
-					for (var i = 0; i < x.length; i++) {
-						x[i].classList.remove('autocomplete-active');
-					}
-				}
-				function closeAllLists(elmnt) {
-					var xContainer = shadow.getElementById('container');
-					var x = xContainer.getElementsByClassName(
-						'autocomplete-items'
-					);
-					for (var i = 0; i < x.length; i++) {
-						if (elmnt != x[i] && elmnt != inp) {
-							x[i].parentNode.removeChild(x[i]);
-						}
-					}
-				}
-				document.addEventListener('click', function(e) {
-					closeAllLists(e.target);
-				});
-			} // end of autocomplete
+			// 	function addActive(x) {
+			// 		if (!x) return false;
+			// 		removeActive(x);
+			// 		if (currentFocus >= x.length) currentFocus = 0;
+			// 		if (currentFocus < 0) currentFocus = x.length - 1;
+			// 		x[currentFocus].classList.add('autocomplete-active');
+			// 	}
+			// 	function removeActive(x) {
+			// 		for (var i = 0; i < x.length; i++) {
+			// 			x[i].classList.remove('autocomplete-active');
+			// 		}
+			// 	}
+			// 	function closeAllLists(elmnt) {
+			// 		var xContainer = shadow.getElementById('container');
+			// 		var x = xContainer.getElementsByClassName(
+			// 			'autocomplete-items'
+			// 		);
+			// 		for (var i = 0; i < x.length; i++) {
+			// 			if (elmnt != x[i] && elmnt != inp) {
+			// 				x[i].parentNode.removeChild(x[i]);
+			// 			}
+			// 		}
+			// 	}
+			// 	document.addEventListener('click', function(e) {
+			// 		closeAllLists(e.target);
+			// 	});
+			// } // end of autocomplete
 			
-				autocomplete(that);				
+			// 	autocomplete(that);				
 		}  // end of constructor
 
 		/* initialization of selected value */
