@@ -1,8 +1,9 @@
 (function()  {
-    // let d3Script = document.createElement('script');
+	 let d3Script = document.createElement('script');
+	 d3Script.src ='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js';
     // / d3Script.src = 'https://openui5.hana.ondemand.com/1.48.4/resources/sap-ui-core.js';
-    //d3Script.async = false;
-	//document.head.appendChild(d3Script);
+    d3Script.async = false;
+	document.head.appendChild(d3Script);
 	
 	let tmpl = document.createElement('template');
 	tmpl.innerHTML = `
@@ -44,7 +45,24 @@ $(function() {
 </div>
 
 	`;
-	class ISearch extends HTMLElement {
+	d3Script.onload = () => 
+
+    customElements.define('com-iprosis-sample-search', class ISearch extends HTMLElement {
+
+		disconnectedCallback () {
+            // your cleanup code goes here
+            try{
+                document.head.removeChild(d3Script);
+            }
+            catch{}
+        }
+
+        connectedCallback () {
+            
+
+        }
+
+	//class ISearch extends HTMLElement {
 		constructor() {
 			super();
 			let shadow = this.attachShadow({ mode: 'open' });
@@ -135,10 +153,12 @@ $(function() {
 			}
 
 	} //end of class
+);
+});
 
 	/* Define web component - input: tag and class */
-	customElements.define('com-iprosis-sample-search', ISearch);
-})();
+// 	customElements.define('com-iprosis-sample-search', ISearch);
+// })();
 	// d3Script.onload = () => 
     // customElements.define('com-iprosis-search', class ISearch extends HTMLElement {
 
