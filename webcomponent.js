@@ -6,12 +6,13 @@
 	
 	let tmpl = document.createElement('template');
 	tmpl.innerHTML = `
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<script
+	<script
 src="https://code.jquery.com/jquery-3.4.1.slim.js"
 integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
 crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
 </script>
@@ -56,102 +57,7 @@ $(function() {
 			//   });
 
 
-			// let that = this;
-			// that.index = 0;
-			// that.showSuggestions = true;
-			// that.display = 'k';
-			// that.input = shadow.querySelector('#myInput');
-			// that.dim = '';
-			// function autocomplete(that) {
-
-			// 	let inp = that.input;
-			// 	let currentFocus;
 			
-			// 	inp.addEventListener('input', function(e) {
-			// 		if (that.showSuggestions){
-			// 		let val = this.value;
-			// 		closeAllLists();
-			// 		currentFocus = -1;
-			// 		let a = document.createElement('div');
-			// 		a.id = this.id + 'autocomplete-list';
-			// 		a.classList.add('autocomplete-items');
-			// 		this.parentNode.appendChild(a);
-
-			// 		for (let i = 0; i < that.dataModel.length; i++) {
-			// 			if (
-			// 				// that.dataModel[i]
-			// 				// 	.substr(0, val.length)
-			// 				// 	.toUpperCase() == val.toUpperCase()
-			// 				that.dataModel[i].toLowerCase().indexOf(val.toLowerCase())>-1
-			// 			) {
-			// 				let b = document.createElement('div');
-			// 				b.innerHTML =
-			// 					'<strong>' +
-			// 					that.dataModel[i].substr(0, val.length) +
-			// 					'</strong>' +
-			// 					that.dataModel[i].substr(val.length);
-			// 				b.addEventListener('click', function(e) {
-			// 					that.selectedValue = this.innerText;
-			// 					inp.value = this.innerText;
-			// 					closeAllLists();
-			// 					that.index = i;
-			// 				});
-			// 				a.appendChild(b);
-			// 			}
-			// 		}
-			// 		} // end auto suggest
-			// 	});
-			// 	inp.addEventListener('keydown', function(e) {
-			// 		var x = shadow.getElementById(
-			// 			this.id + 'autocomplete-list'
-			// 		);
-			// 		if (x) x = x.getElementsByTagName('div');
-			// 		// arrow down
-			// 		if (e.keyCode == 40) {
-			// 			currentFocus++;
-			// 			addActive(x);
-			// 			// arrow up
-			// 		} else if (e.keyCode == 38) {
-			// 			currentFocus--;
-			// 			addActive(x);
-			// 		} else if (e.keyCode == 13) {
-			// 			//enter
-			// 			e.preventDefault();
-			// 			if (currentFocus > -1) {
-			// 				if (x) x[currentFocus].click();
-			// 			}
-			// 		}
-			// 	});
-
-			// 	function addActive(x) {
-			// 		if (!x) return false;
-			// 		removeActive(x);
-			// 		if (currentFocus >= x.length) currentFocus = 0;
-			// 		if (currentFocus < 0) currentFocus = x.length - 1;
-			// 		x[currentFocus].classList.add('autocomplete-active');
-			// 	}
-			// 	function removeActive(x) {
-			// 		for (var i = 0; i < x.length; i++) {
-			// 			x[i].classList.remove('autocomplete-active');
-			// 		}
-			// 	}
-			// 	function closeAllLists(elmnt) {
-			// 		var xContainer = shadow.getElementById('container');
-			// 		var x = xContainer.getElementsByClassName(
-			// 			'autocomplete-items'
-			// 		);
-			// 		for (var i = 0; i < x.length; i++) {
-			// 			if (elmnt != x[i] && elmnt != inp) {
-			// 				x[i].parentNode.removeChild(x[i]);
-			// 			}
-			// 		}
-			// 	}
-			// 	document.addEventListener('click', function(e) {
-			// 		closeAllLists(e.target);
-			// 	});
-			// } // end of autocomplete
-			
-			// 	autocomplete(that);				
 		}  // end of constructor
 
 		/* initialization of selected value */
@@ -247,18 +153,6 @@ $(function() {
 			getSelectedDimension(){
 				return this.dim;
 			}
-
-			// chooseData(){
-			// 	if (this.display == 'k'){
-			// 		this.dataModel = this.dataModel0;
-			// 	}
-			// 	else if (this.display == 't'){
-			// 		this.dataModel = this.dataModel1;
-			// 	}
-			// 	else if (this.display == 'kt'){
-			// 		this.dataModel=this.dataModel2;
-			// 	}
-			// }
 
 	} //end of class
 
