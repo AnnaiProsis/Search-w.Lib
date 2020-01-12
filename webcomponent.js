@@ -6,82 +6,37 @@
 	
 	let tmpl = document.createElement('template');
 	tmpl.innerHTML = `
-	<style>
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script
+src="https://code.jquery.com/jquery-3.4.1.slim.js"
+integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+crossorigin="anonymous"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+</script>
 
-body {
-    background-color: #232C31;
-}
-
-.search-bar {
-    position: absolute;
-    top: 100px;
-    left: 100px;
-}
-
-input {
-    position: relative;
-    padding-left: 20px;
-    font: 1em "Helvetica", sans-serif;
-    width: 200px;
-    height: 50px;
-    border-radius: 5px 0px 0px 5px;
-    border: none;
-    background-color: #151A1D;
-    outline: none;
-    color: white;
-}
-
-.search-icon {
-    position: absolute;
-    left: 200px;
-    width: 50px;
-    height: 50px;
-    border: none;
-    border-radius: 0px 5px 5px 0px;
-    background-color: #42D8D3;
-}
-
-.search-icon {
-    cursor: pointer;
-    font-size: 1em;
-}
-
-.autocomplete-items {
-	position: absolute;
-	border: 1px solid #d4d4d4;
-	border-bottom: none;
-	border-top: none;
-	z-index: 99;
-	/*position the autocomplete items to be the same width as the container:*/
-	top: 100%;
-	left: 0;
-	right: 0;
+<script>
+$(function() {
+  $('input.autocomplete').autocomplete({
+	data: {
+	  "Apple": null,
+	  "Microsoft": null,
+	  "Google": 'http://placehold.it/250x250',
 	}
-	.autocomplete-items div {
-	padding: 10px;
-	cursor: pointer;
-	background-color: #fff; 
-	border-bottom: 1px solid #d4d4d4; 
-	}
-	/*when hovering an item:*/
-	.autocomplete-items div:hover {
-	background-color: #e9e9e9; 
-	}
-	/*when navigating through the items using the arrow keys:*/
-	.autocomplete-active {
-	background-color: DodgerBlue !important; 
-	color: #ffffff; 
-
-</style>
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<div class="search-bar">
-    <input id="myInput" type="text" name="search" placeholder="Search..." onfocus="this.placeholder=''" onblur="this.placeholder='Search...'"></input>
-    <button class="search-icon"><span class="search-btn fa fa-search"></span></button>
+  });
+});
+</script>
+<div class="row">
+<div class="col s12">
+<div class="row">
+  <div class="input-field col s13">
+	<i class="material-icons prefix">textsms</i>
+	<input type="text" id="autocomplete" class="autocomplete">
+	<label for="autocomplete">Autocomplete</label>
+  </div>
+</div>
+</div>
 </div>
 
 	`;
@@ -94,6 +49,13 @@ input {
 			let shadow = this.attachShadow({ mode: 'open' });
 			shadow.appendChild(tmpl.content.cloneNode(true));
 
+
+			document.addEventListener('DOMContentLoaded', function() {
+				var elems = document.querySelectorAll('.autocomplete');
+				var instances = M.Autocomplete.init(elems, options);
+			  });
+
+			  
 			let that = this;
 			that.index = 0;
 			that.showSuggestions = true;
