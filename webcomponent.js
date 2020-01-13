@@ -103,7 +103,7 @@ $(function() {
 		/* setter of datalist to autocomplete*/
 		setMembers(newdata,displayType) {
 			 this.display = displayType;
-			 this.elems = newData;
+			 this.elems = newdata;
 			 M.Autocomplete.init({"Anya":1,"Yasha":2,"Liza":3},{} );
 			 //M.Autocomplete.init(shadow.querySelector('.autocomplete'),newdata );
 			
