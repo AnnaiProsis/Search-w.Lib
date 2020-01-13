@@ -98,7 +98,7 @@ $(function() {
 		/* setter of datalist to autocomplete*/
 		setMembers(newdata,displayType) {
 			 this.display = displayType;
-			 M.Autocomplete.init(querySelector('.autocomplete'), newdata);
+			 M.Autocomplete.init(querySelector('#autocomplete'), newdata);
 			
 			}
 
