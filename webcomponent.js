@@ -90,14 +90,15 @@ $(function() {
 		getSelectedText(){
 			// 	return this.dataModel1[this.index];
 			var instance = M.Autocomplete.getInstance({"Anya":1,"Yasha":2,"Liza":3});
-			instance.open();
+			return instance;
 		}
 
 		/* getter of data list */
 		getMembers() {
 			//return this.dataModel;
 			var instance = M.Autocomplete.getInstance(this.elems);
-			instance.open();
+			return instance;
+			
 		}
 
 		/* setter of datalist to autocomplete*/
@@ -106,7 +107,7 @@ $(function() {
 			 this.elems = newdata;
 			 M.Autocomplete.init({"Anya":1,"Yasha":2,"Liza":3},{} );
 			 //M.Autocomplete.init(shadow.querySelector('.autocomplete'),newdata );
-			
+			 instance.open();
 			}
 
 			getPlaceholder(){
