@@ -92,13 +92,15 @@ $(function() {
 
 		/* getter of data list */
 		getMembers() {
-			return this.dataModel;
+			//return this.dataModel;
+			var instance = M.Autocomplete.getInstance(elem);
+			instance.open();
 		}
 
 		/* setter of datalist to autocomplete*/
 		setMembers(newdata,displayType) {
 			 this.display = displayType;
-			 M.Autocomplete.init(newdata,{} );
+			 M.Autocomplete.init(["Anya","Yasha","Liza"],{} );
 			 //M.Autocomplete.init(shadow.querySelector('.autocomplete'),newdata );
 			
 			}
