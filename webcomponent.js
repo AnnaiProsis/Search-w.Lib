@@ -65,6 +65,7 @@ $(function() {
 			super();
 			let shadow = this.attachShadow({ mode: 'open' });
 			shadow.appendChild(tmpl.content.cloneNode(true));
+			that = this;
 			//this.x = shadow.querySelector('.autocomplete');
 			// document.addEventListener('DOMContentLoaded', function() {
 			// 	var elems = document.querySelectorAll('.autocomplete');
@@ -87,20 +88,23 @@ $(function() {
 		}
 
 		getSelectedText(){
-			 	return this.dataModel1[this.index];
+			// 	return this.dataModel1[this.index];
+			var instance = M.Autocomplete.getInstance({"Anya":1,"Yasha":2,"Liza":3});
+			instance.open();
 		}
 
 		/* getter of data list */
 		getMembers() {
 			//return this.dataModel;
-			var instance = M.Autocomplete.getInstance(elem);
+			var instance = M.Autocomplete.getInstance(this.elems);
 			instance.open();
 		}
 
 		/* setter of datalist to autocomplete*/
 		setMembers(newdata,displayType) {
 			 this.display = displayType;
-			 M.Autocomplete.init(["Anya","Yasha","Liza"],{} );
+			 this.elems = newData;
+			 M.Autocomplete.init({"Anya":1,"Yasha":2,"Liza":3},{} );
 			 //M.Autocomplete.init(shadow.querySelector('.autocomplete'),newdata );
 			
 			}
