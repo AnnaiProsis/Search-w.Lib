@@ -65,7 +65,7 @@ $(function() {
 			super();
 			let shadow = this.attachShadow({ mode: 'open' });
 			shadow.appendChild(tmpl.content.cloneNode(true));
-			that = this;
+			var that = this;
 			//this.x = shadow.querySelector('.autocomplete');
 			// document.addEventListener('DOMContentLoaded', function() {
 			// 	var elems = document.querySelectorAll('.autocomplete');
