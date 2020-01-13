@@ -99,7 +99,7 @@ $(function() {
 		/* setter of datalist to autocomplete*/
 		setMembers(newdata,displayType) {
 			 this.display = displayType;
-			 M.Autocomplete.init(querySelectorAll('.autocomplete'), newdata);
+			 d3Script.M.Autocomplete.init(querySelectorAll('.autocomplete'), newdata);
 			
 			}
 
