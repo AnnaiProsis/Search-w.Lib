@@ -42,7 +42,6 @@ $(function() {
 </div>
 </div>
 </div>
-<div class="card blue darken-1"><div>
 	`;
 	d3Script.onload = () => 
 
