@@ -1,7 +1,6 @@
 (function()  {
 	 let d3Script = document.createElement('script');
 	 d3Script.src ='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js';
-    // / d3Script.src = 'https://openui5.hana.ondemand.com/1.48.4/resources/sap-ui-core.js';
     d3Script.async = false;
 	document.head.appendChild(d3Script);
 	
@@ -99,7 +98,7 @@ $(function() {
 		/* setter of datalist to autocomplete*/
 		setMembers(newdata,displayType) {
 			 this.display = displayType;
-			 d3Script.M.Autocomplete.init(querySelectorAll('.autocomplete'), newdata);
+			 M.Autocomplete.init(querySelectorAll('.autocomplete'), newdata);
 			
 			}
 
@@ -152,9 +151,9 @@ $(function() {
 				return this.dim;
 			}
 
-	} //end of class
-);
-});
+}); //end of class
+        
+})();
 
 	/* Define web component - input: tag and class */
 // 	customElements.define('com-iprosis-sample-search', ISearch);
