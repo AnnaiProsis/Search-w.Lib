@@ -66,10 +66,10 @@ $(function() {
 			super();
 			let shadow = this.attachShadow({ mode: 'open' });
 			shadow.appendChild(tmpl.content.cloneNode(true));
-			this.x = shadow.querySelector('#autocomplete')
+			//this.x = shadow.querySelector('#autocomplete')
 			// document.addEventListener('DOMContentLoaded', function() {
 			// 	var elems = document.querySelectorAll('.autocomplete');
-			// 	var instances = M.Autocomplete.init(elems, options);
+			 	var instances = M.Autocomplete.init(elems, options);
 			//   });		
 		}  // end of constructor
 
@@ -99,7 +99,7 @@ $(function() {
 		/* setter of datalist to autocomplete*/
 		setMembers(newdata,displayType) {
 			 this.display = displayType;
-			 M.Autocomplete.init(this.x, newdata);
+			 M.Autocomplete.init(newdata,options );
 			
 			}
 
