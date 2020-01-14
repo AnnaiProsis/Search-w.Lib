@@ -105,9 +105,9 @@ $(function() {
 		setMembers(newdata,displayType) {
 			 this.display = displayType;
 			 this.elems = newdata;
-			 M.Autocomplete.init({"Anya":1,"Yasha":2,"Liza":3},{} );
+			 M.Autocomplete.init({"Anya":'1',"Yasha":'2',"Liza":'3'});
 			 //M.Autocomplete.init(shadow.querySelector('.autocomplete'),newdata );
-			 instance.open();
+			// instance.open();
 			}
 
 			getPlaceholder(){
