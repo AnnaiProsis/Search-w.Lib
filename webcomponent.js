@@ -89,7 +89,7 @@ $(function() {
 
 		getSelectedText(){
 			// 	return this.dataModel1[this.index];
-			var instance = M.Autocomplete.getInstance({"Anya":1,"Yasha":2,"Liza":3});
+			var instance = M.Autocomplete.getInstance({"Anya":'1',"Yasha":'2',"Liza":'3'});
 			return instance;
 		}
 
