@@ -16,7 +16,7 @@ crossorigin="anonymous"></script>
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
 </script>
-<script src="https://fonts.googleapis.com/icon?family=Material+Icons"">
+<script src="https://fonts.googleapis.com/icon?family=Material+Icons">
 </script>
 
 
@@ -89,7 +89,7 @@ $(function() {
 
 		getSelectedText(){
 			// 	return this.dataModel1[this.index];
-			var instance = M.Autocomplete.getInstance({"Anya":'1',"Yasha":'2',"Liza":'3'});
+			var instance = M.Autocomplete.getInstance({"Anya":'1',"Yasha":'2',"Liza":'3'},);
 			return instance;
 		}
 
