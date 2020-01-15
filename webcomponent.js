@@ -1,8 +1,27 @@
 (function()  {
-	 let d3Script = document.createElement('script');
-	 d3Script.src ='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js';
-    d3Script.async = false;
-	document.head.appendChild(d3Script);
+	
+    var materilizeScript = document.createElement("script");
+    materilizeScript.src =
+      "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js";
+    materilizeScript.async = false;
+    document.head.appendChild(materilizeScript);
+
+    var materilizeCss = document.createElement("link");
+    materilizeCss.rel = "stylesheet";
+    materilizeCss.type = "text/css";
+    materilizeCss.href =
+      "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css";
+  
+    document.head.appendChild(materilizeCss);
+
+    var materilizeIcons = document.createElement("link");
+    materilizeIcons.rel = "stylesheet";
+    materilizeIcons.type = "text/css";
+    materilizeIcons.href =
+      "https://fonts.googleapis.com/icon?family=Material+Icons";
+  
+    document.head.appendChild(materilizeIcons);
+  
 	
 	let tmpl = document.createElement('template');
 	tmpl.innerHTML = `
@@ -43,24 +62,10 @@ $(function() {
 </div>
 </div>
 	`;
-	d3Script.onload = () => 
-
-    customElements.define('com-iprosis-sample-search', class ISearch extends HTMLElement {
-
-		disconnectedCallback () {
-            // your cleanup code goes here
-            try{
-                document.head.removeChild(d3Script);
-            }
-            catch{}
-        }
-
-        connectedCallback () {
-            
-
-        }
-
-	//class ISearch extends HTMLElement {
+	const kuku = new CSSStyleSheet();
+	document.adoptedStyleSheets = [kuku];
+	
+	class ISearch extends HTMLElement {
 		constructor() {
 			super();
 			let shadow = this.attachShadow({ mode: 'open' });
@@ -70,7 +75,8 @@ $(function() {
 			// document.addEventListener('DOMContentLoaded', function() {
 			// 	var elems = document.querySelectorAll('.autocomplete');
 			//	var instances = M.Autocomplete.init(elems, options);
-			//   });		
+			//   });
+			this.adoptedStyleSheets = [kuku];		
 		}  // end of constructor
 
 		/* initialization of selected value */
@@ -159,7 +165,7 @@ $(function() {
 				return this.dim;
 			}
 
-}); //end of class
+}; //end of class
         
 })();
 
