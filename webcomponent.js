@@ -63,7 +63,7 @@ $(function() {
 </div>
 	`;
 	const kuku = new CSSStyleSheet();
-	document.adoptedStyleSheets = [kuku];
+	//document.adoptedStyleSheets = [kuku];
 	
 	class ISearch extends HTMLElement {
 		constructor() {
