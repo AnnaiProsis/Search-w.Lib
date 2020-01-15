@@ -29,8 +29,6 @@
 src="https://code.jquery.com/jquery-3.4.1.slim.js"
 integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
 crossorigin="anonymous"></script>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
@@ -63,20 +61,24 @@ $(function() {
 </div>
 	`;
 	const kuku = new CSSStyleSheet();
-	//document.adoptedStyleSheets = [kuku];
+	document.adoptedStyleSheets = [kuku];
 	
 	class ISearch extends HTMLElement {
 		constructor() {
 			super();
 			let shadow = this.attachShadow({ mode: 'open' });
 			shadow.appendChild(tmpl.content.cloneNode(true));
+			shadow.appendChild(materilizeCss);
+			shadow.appendChild(materilizeIcons);
+			shadow.appendChild(materilizeScript);
+			this.adoptedStyleSheets = [kuku];	
 			var that = this;
 			//this.x = shadow.querySelector('.autocomplete');
 			// document.addEventListener('DOMContentLoaded', function() {
 			// 	var elems = document.querySelectorAll('.autocomplete');
 			//	var instances = M.Autocomplete.init(elems, options);
 			//   });
-			this.adoptedStyleSheets = [kuku];		
+				
 		}  // end of constructor
 
 		/* initialization of selected value */
