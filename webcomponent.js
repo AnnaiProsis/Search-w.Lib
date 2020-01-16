@@ -37,14 +37,14 @@
           I am convenient because I require little markup to use effectively.</p>
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
+          <a href="'https://www.ynet.co.il/home/0,7340,L-8,00.html'">This is a link</a>
           <a href="#">This is a link</a>
         </div>
       </div>
     </div>
   </div>
 
-  
+
 <div class="row">
 <div class="col s12">
 <div class="row">
