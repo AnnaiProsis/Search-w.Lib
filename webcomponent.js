@@ -1,5 +1,7 @@
 (function()  {
 	
+   
+  
     var materilizeScript = document.createElement("script");
     materilizeScript.src =
       "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js";
@@ -24,30 +26,25 @@
   
 	
 	let tmpl = document.createElement('template');
-	tmpl.innerHTML = `
-	<script
-src="https://code.jquery.com/jquery-3.4.1.slim.js"
-integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
-crossorigin="anonymous"></script>
 	
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
-</script>
-<script src="https://fonts.googleapis.com/icon?family=Material+Icons">
-</script>
+	tmpl.innerHTML = `
+	<div class="row">
+    <div class="col s12 m6">
+      <div class="card blue darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Card Title</span>
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-
-<script>
-$(function() {
-  $('input.autocomplete').autocomplete({
-	data: {
-	  "Apple": null,
-	  "Microsoft": null,
-	  "Google": 'http://placehold.it/250x250'
-	}
-  });
-});
-</script>
+  
 <div class="row">
 <div class="col s12">
 <div class="row">
