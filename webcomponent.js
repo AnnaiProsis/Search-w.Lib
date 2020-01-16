@@ -8,6 +8,13 @@
     materilizeScript.async = false;
     document.head.appendChild(materilizeScript);
 
+
+  var jqScript = document.createElement("script");
+  jqScript.src = "https://code.jquery.com/jquery-3.4.1.slim.js";
+  jqScript.async = false;
+  document.head.appendChild(jqScript);
+
+
     var materilizeCss = document.createElement("link");
     materilizeCss.rel = "stylesheet";
     materilizeCss.type = "text/css";
@@ -56,9 +63,21 @@
 </div>
 </div>
 </div>
+
+<script>
+$(function() {
+  $('input.autocomplete').autocomplete({
+	data: {
+	  "Apple": null,
+	  "Microsoft": null,
+	  "Google": 'http://placehold.it/250x250'
+	}
+  });
+});
+</script>
 	`;
-	const kuku = new CSSStyleSheet();
-	document.adoptedStyleSheets = [kuku];
+	const csss = new CSSStyleSheet();
+	document.adoptedStyleSheets = [csss];
 	
 	class ISearch extends HTMLElement {
 		constructor() {
@@ -68,7 +87,8 @@
 			shadow.appendChild(materilizeCss);
 			shadow.appendChild(materilizeIcons);
 			shadow.appendChild(materilizeScript);
-			this.adoptedStyleSheets = [kuku];	
+			shadow.appendChild(jqScript);
+			this.adoptedStyleSheets = [csss];	
 			var that = this;
 			//this.x = shadow.querySelector('.autocomplete');
 			// document.addEventListener('DOMContentLoaded', function() {
@@ -111,7 +131,9 @@
 			 this.display = displayType;
 			 this.elems = newdata;
 			 M.Autocomplete.init({"Anya":'1',"Yasha":'2',"Liza":'3'});
-			 console.log(M.Autocomplete.init({"Anya":'1',"Yasha":'2',"Liza":'3'}));
+
+
+			// console.log(M.Autocomplete.init({"Anya":'1',"Yasha":'2',"Liza":'3'}));
 			 //M.Autocomplete.init(shadow.querySelector('.autocomplete'),newdata );
 			// instance.open();
 			}
