@@ -130,7 +130,15 @@ $(function() {
 		setMembers(newdata,displayType) {
 			 this.display = displayType;
 			 this.elems = newdata;
-			 M.Autocomplete.init({"Anya":'1',"Yasha":'2',"Liza":'3'});
+			 var instances =M.Autocomplete.init({"Anya":'1',"Yasha":'2',"Liza":'3'});
+			 M.Autocomplete.init(elems);
+			 instances.updateData({
+				"Apple": null,
+				"Microsoft": null,
+				"Google": 'https://placehold.it/250x250'
+			  });
+
+			  instances.open();
 
 
 			// console.log(M.Autocomplete.init({"Anya":'1',"Yasha":'2',"Liza":'3'}));
