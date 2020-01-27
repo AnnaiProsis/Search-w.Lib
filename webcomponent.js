@@ -5,9 +5,9 @@
       "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js";
     materilizeScript.async = false;
 	document.head.appendChild(materilizeScript);
-	materilizeScript.onload = function() {
-		alert(`Image loaded, size`);
-	  };
+	// materilizeScript.onload = function() {
+	// 	alert(`Image loaded, size`);
+	//   };
 	materilizeScript.onerror = function() {
 		alert("Error loading " + this.src); 
 	  };
