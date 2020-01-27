@@ -69,16 +69,13 @@
 
 
 	`;
-	// const csss = new CSSStyleSheet();
-	// document.adoptedStyleSheets = [csss];
-	
+	 const csss = new CSSStyleSheet();
+	 document.adoptedStyleSheets = [csss];
 
-	materilizeScript.onload = () => 
-
-    customElements.define('com-iprosis-sample-search', class ISearch extends HTMLElement {
+   // customElements.define('com-iprosis-sample-search', class ISearch extends HTMLElement {
 
 
-	//class ISearch extends HTMLElement {
+	class ISearch extends HTMLElement {
 		constructor() {
 			super();
 			let shadow = this.attachShadow({ mode: 'open' });
@@ -194,9 +191,9 @@
 				return this.dim;
 			}
 
-//}; //end of class
+}; //end of class
         
-})();
+//})();
 }); //end of function
 
 	/* Define web component - input: tag and class */
