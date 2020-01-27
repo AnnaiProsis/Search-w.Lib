@@ -1,6 +1,6 @@
 (function()  {
 	
-    var materilizeScript = document.createElement("script");
+    let materilizeScript = document.createElement("script");
     materilizeScript.src ="https://d3js.org/d3.v5.min.js";
      // "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js";
     materilizeScript.async = false;
@@ -12,13 +12,13 @@
 		alert("Image loaded, size");
 	  };
 
-  var jqScript = document.createElement("script");
+  let jqScript = document.createElement("script");
   jqScript.src = "https://code.jquery.com/jquery-3.4.1.slim.js";
   jqScript.async = false;
   document.head.appendChild(jqScript);
 
 
-    var materilizeCss = document.createElement("link");
+    let materilizeCss = document.createElement("link");
     materilizeCss.rel = "stylesheet";
     materilizeCss.type = "text/css";
     materilizeCss.href =
@@ -26,7 +26,7 @@
   
     document.head.appendChild(materilizeCss);
 
-    var materilizeIcons = document.createElement("link");
+    let materilizeIcons = document.createElement("link");
     materilizeIcons.rel = "stylesheet";
     materilizeIcons.type = "text/css";
     materilizeIcons.href =
