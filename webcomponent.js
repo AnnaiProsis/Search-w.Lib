@@ -1,8 +1,8 @@
 (function()  {
 	
     let materilizeScript = document.createElement("script");
-    materilizeScript.src =
-      'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js';
+    materilizeScript.src = 'https://d3js.org/d3.v5.min.js';
+    //  'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js';
     materilizeScript.async = false;
 	document.head.appendChild(materilizeScript);
 	materilizeScript.onerror = function() {
@@ -69,13 +69,13 @@
 
 
 	`;
-	 const csss = new CSSStyleSheet();
-	 document.adoptedStyleSheets = [csss];
+	//  const csss = new CSSStyleSheet();
+	//  document.adoptedStyleSheets = [csss];
 
-   // customElements.define('com-iprosis-sample-search', class ISearch extends HTMLElement {
+    customElements.define('com-iprosis-sample-search', class ISearch extends HTMLElement {
 
 
-	class ISearch extends HTMLElement {
+	//class ISearch extends HTMLElement {
 		constructor() {
 			super();
 			let shadow = this.attachShadow({ mode: 'open' });
@@ -191,10 +191,10 @@
 				return this.dim;
 			}
 
-}; //end of class
+//}; //end of class
         
-//})();
-}); //end of function
+})();
+//}); //end of function
 
 	/* Define web component - input: tag and class */
 // 	customElements.define('com-iprosis-sample-search', ISearch);
@@ -363,4 +363,4 @@
 
 	
 
-	// }); //end of class
+	 }); //end of class
