@@ -68,7 +68,7 @@
 	document.adoptedStyleSheets = [csss];
 	
 
-	d3Script.onload = () => 
+	materilizeScript.onload = () => 
 
     customElements.define('com-iprosis-sample-search', class ISearch extends HTMLElement {
 
