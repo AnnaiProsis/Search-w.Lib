@@ -8,7 +8,7 @@
 	materilizeScript.onerror = function() {
 		alert("Error loading " + this.src); 
 	  };
-	  img.onload = function() {
+	  materilizeScript.onload = function() {
 		alert("Image loaded, size");
 	  };
 
