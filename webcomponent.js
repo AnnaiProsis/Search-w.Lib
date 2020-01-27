@@ -1,8 +1,8 @@
 (function()  {
 	
     let materilizeScript = document.createElement("script");
-    materilizeScript.src ="https://d3js.org/d3.v5.min.js";
-     // "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js";
+    materilizeScript.src =
+      "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js";
     materilizeScript.async = false;
 	document.head.appendChild(materilizeScript);
 	materilizeScript.onerror = function() {
