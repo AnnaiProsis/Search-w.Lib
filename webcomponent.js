@@ -4,8 +4,13 @@
     materilizeScript.src =
       "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js";
     materilizeScript.async = false;
-    document.head.appendChild(materilizeScript);
-
+	document.head.appendChild(materilizeScript);
+	materilizeScript.onload = function() {
+		alert(`Image loaded, size`);
+	  };
+	materilizeScript.onerror = function() {
+		alert("Error loading " + this.src); 
+	  };
 
   var jqScript = document.createElement("script");
   jqScript.src = "https://code.jquery.com/jquery-3.4.1.slim.js";
