@@ -194,11 +194,11 @@
 }; //end of class
         
 //})();
-}); //end of function
+//}); //end of function
 
 	/* Define web component - input: tag and class */
-// 	customElements.define('com-iprosis-sample-search', ISearch);
-// })();
+ 	customElements.define('com-iprosis-sample-search', ISearch);
+ })();
 	// d3Script.onload = () => 
     // customElements.define('com-iprosis-search', class ISearch extends HTMLElement {
 
