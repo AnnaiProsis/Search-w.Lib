@@ -2,8 +2,8 @@
 	
     let materilizeScript = document.createElement("script");
     materilizeScript.src = //'https://d3js.org/d3.v5.min.js';
-      "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js";
-	//'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js';
+     // "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js";
+	"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js";
 	materilizeScript.async = false;
 	document.head.appendChild(materilizeScript);
 	// materilizeScript.onerror = function() {
@@ -23,8 +23,8 @@
     materilizeCss.rel = "stylesheet";
     materilizeCss.type = "text/css";
     materilizeCss.href =
-      "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css";
-  
+     // "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css";
+	 "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css";
     document.head.appendChild(materilizeCss);
 
     let materilizeIcons = document.createElement("link");
@@ -92,8 +92,16 @@
 			// 	var elems = document.querySelectorAll('.autocomplete');
 			//	var instances = M.Autocomplete.init(elems, options);
 			//   });
-				
+			var myBarChart = new Chart(ctx, {
+				type: 'bar',
+				data: data,
+				options: options
+			});	
+			data = [[5,6], [-3,-6]];
+			myBarChart.label = "AAAAAAAAA";
 		}  // end of constructor
+
+
 
 		/* initialization of selected value */
 		selectedValue = ''; 
