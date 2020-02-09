@@ -5,12 +5,12 @@
       'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js';
     materilizeScript.async = false;
 	document.head.appendChild(materilizeScript);
-	materilizeScript.onerror = function() {
-		alert("Error loading " + this.src); 
-	  };
-	  materilizeScript.onload = function() {
-		alert("Image loaded, size");
-	  };
+	// materilizeScript.onerror = function() {
+	// 	alert("Error loading " + this.src); 
+	//   };
+	//   materilizeScript.onload = function() {
+	// 	alert("Image loaded, size");
+	//   };
 
 //   let jqScript = document.createElement("script");
 //   jqScript.src = "https://code.jquery.com/jquery-3.4.1.slim.js";
@@ -74,7 +74,7 @@
 
     //customElements.define('com-iprosis-sample-search', class ISearch extends HTMLElement {
 
-
+		materilizeScript.onload = function() {
 	class ISearch extends HTMLElement {
 		constructor() {
 			super();
@@ -192,7 +192,8 @@
 			}
 
 }; //end of class
-        
+		
+}; //materialize on load
 //})();
 //}); //end of function
 
