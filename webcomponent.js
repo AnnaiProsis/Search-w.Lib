@@ -23,8 +23,8 @@
     materilizeCss.rel = "stylesheet";
     materilizeCss.type = "text/css";
     materilizeCss.href =
-     // "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css";
-	 "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css";
+      "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css";
+	 //"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css";
     document.head.appendChild(materilizeCss);
 
     let materilizeIcons = document.createElement("link");
