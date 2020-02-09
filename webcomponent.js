@@ -72,10 +72,10 @@
 	  const csss = new CSSStyleSheet();
 	  document.adoptedStyleSheets = [csss];
 
-    customElements.define('com-iprosis-sample-search', class ISearch extends HTMLElement {
+    //customElements.define('com-iprosis-sample-search', class ISearch extends HTMLElement {
 
 
-	//class ISearch extends HTMLElement {
+	class ISearch extends HTMLElement {
 		constructor() {
 			super();
 			let shadow = this.attachShadow({ mode: 'open' });
@@ -191,10 +191,10 @@
 				return this.dim;
 			}
 
-//}; //end of class
+}; //end of class
         
-})();
-//}); //end of function
+//})();
+}); //end of function
 
 	/* Define web component - input: tag and class */
 // 	customElements.define('com-iprosis-sample-search', ISearch);
@@ -363,4 +363,4 @@
 
 	
 
-	 }); //end of class
+	 //}); //end of class
