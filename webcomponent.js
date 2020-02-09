@@ -18,21 +18,21 @@
 //   document.head.appendChild(jqScript);
 
 
-//     let materilizeCss = document.createElement("link");
-//     materilizeCss.rel = "stylesheet";
-//     materilizeCss.type = "text/css";
-//     materilizeCss.href =
-//       "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css";
+    let materilizeCss = document.createElement("link");
+    materilizeCss.rel = "stylesheet";
+    materilizeCss.type = "text/css";
+    materilizeCss.href =
+      "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css";
   
-//     document.head.appendChild(materilizeCss);
+    document.head.appendChild(materilizeCss);
 
-//     let materilizeIcons = document.createElement("link");
-//     materilizeIcons.rel = "stylesheet";
-//     materilizeIcons.type = "text/css";
-//     materilizeIcons.href =
-//       "https://fonts.googleapis.com/icon?family=Material+Icons";
+    let materilizeIcons = document.createElement("link");
+    materilizeIcons.rel = "stylesheet";
+    materilizeIcons.type = "text/css";
+    materilizeIcons.href =
+      "https://fonts.googleapis.com/icon?family=Material+Icons";
   
-//     document.head.appendChild(materilizeIcons);
+    document.head.appendChild(materilizeIcons);
   
 	
 	let tmpl = document.createElement('template');
@@ -69,8 +69,8 @@
 
 
 	`;
-	//  const csss = new CSSStyleSheet();
-	//  document.adoptedStyleSheets = [csss];
+	  const csss = new CSSStyleSheet();
+	  document.adoptedStyleSheets = [csss];
 
     customElements.define('com-iprosis-sample-search', class ISearch extends HTMLElement {
 
@@ -80,8 +80,8 @@
 			super();
 			let shadow = this.attachShadow({ mode: 'open' });
 			shadow.appendChild(tmpl.content.cloneNode(true));
-			// shadow.appendChild(materilizeCss);
-			// shadow.appendChild(materilizeIcons);
+			 shadow.appendChild(materilizeCss);
+			 shadow.appendChild(materilizeIcons);
 			shadow.appendChild(materilizeScript);
 			//shadow.appendChild(jqScript);
 			this.adoptedStyleSheets = [csss];	
