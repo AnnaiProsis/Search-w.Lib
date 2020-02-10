@@ -77,7 +77,7 @@
 			//	var instances = M.Autocomplete.init(elems, options);
 			//   });
 			//var ctx = document.getElementBy("myChart").getContext('2d');
-			var ctx = document.shadow.querySelector('#myChart').getContext('2d');
+			var ctx = shadow.querySelector('#myChart').getContext('2d');
 				var myChart = new Chart(ctx, {
 				type: 'bar',
 				data: {
