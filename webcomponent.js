@@ -2,8 +2,8 @@
 	
     let materilizeScript = document.createElement("script");
     materilizeScript.src = //'https://d3js.org/d3.v5.min.js';
-      "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js";
-	//"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js";
+     // "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js";
+	"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js";
 	materilizeScript.async = false;
 	document.head.appendChild(materilizeScript);
 	// materilizeScript.onerror = function() {
@@ -23,8 +23,8 @@
     materilizeCss.rel = "stylesheet";
     materilizeCss.type = "text/css";
     materilizeCss.href =
-      "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css";
-	 //"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css";
+      //"https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css";
+	 "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css";
     document.head.appendChild(materilizeCss);
 
     let materilizeIcons = document.createElement("link");
@@ -39,34 +39,18 @@
 	let tmpl = document.createElement('template');
 	
 	tmpl.innerHTML = `
-	<div class="row">
-    <div class="col s12 m6">
-      <div class="card blue darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Card Title</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-        </div>
-        <div class="card-action">
-          <a href="'https://www.ynet.co.il/home/0,7340,L-8,00.html'">This is a link</a>
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-    </div>
-  </div>
+	.container {
+		width: 80%;
+		margin: 15px auto;
+	  }
 
-
-<div class="row">
-<div class="col s12">
-<div class="row">
-  <div class="input-field col s13">
-	<i class="material-icons prefix">textsms</i>
-	<input type="text" id="autocomplete" class="autocomplete">
-	<label for="autocomplete">Autocomplete</label>
+	<div class="container">
+  <h2>Chart.js — Bar Chart Demo</h2>
+  <div>
+    <canvas id="myChart"></canvas>
   </div>
 </div>
-</div>
-</div>
+
 
 
 	`;
@@ -92,6 +76,22 @@
 			// 	var elems = document.querySelectorAll('.autocomplete');
 			//	var instances = M.Autocomplete.init(elems, options);
 			//   });
+			var ctx = document.getElementById("myChart").getContext('2d');
+				var myChart = new Chart(ctx, {
+				type: 'bar',
+				data: {
+					labels: ["M", "T", "W", "T", "F", "S", "S"],
+					datasets: [{
+					label: 'apples',
+					data: [12, 19, 3, 17, 28, 24, 7],
+					backgroundColor: "rgba(153,255,51,1)"
+					}, {
+					label: 'oranges',
+					data: [30, 29, 5, 5, 20, 3, 10],
+					backgroundColor: "rgba(255,153,0,1)"
+					}]
+				}
+});
 		}  // end of constructor
 
 
