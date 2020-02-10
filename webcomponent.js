@@ -6,12 +6,12 @@
 	"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js";
 	materilizeScript.async = false;
 	document.head.appendChild(materilizeScript);
-	// materilizeScript.onerror = function() {
-	// 	alert("Error loading " + this.src); 
-	//   };
-	//   materilizeScript.onload = function() {
-	// 	alert("Loaded");
-	//   };
+	materilizeScript.onerror = function() {
+		alert("Error loading " + this.src); 
+	  };
+	  materilizeScript.onload = function() {
+		alert("Loaded");
+	  };
 
 //   let jqScript = document.createElement("script");
 //   jqScript.src = "https://code.jquery.com/jquery-3.4.1.slim.js";
