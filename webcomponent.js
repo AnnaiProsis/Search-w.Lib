@@ -56,11 +56,11 @@
 	`;
 	  const csss = new CSSStyleSheet();
 	  document.adoptedStyleSheets = [csss];
-	  materilizeScript.onload = () => 
-    customElements.define('com-iprosis-sample-search', class ISearch extends HTMLElement {
+	//  materilizeScript.onload = () => 
+  //  customElements.define('com-iprosis-sample-search', class ISearch extends HTMLElement {
 
 	
-	//class ISearch extends HTMLElement {
+	class ISearch extends HTMLElement {
 		constructor() {
 			super();
 			let shadow = this.attachShadow({ mode: 'open' });
@@ -77,7 +77,7 @@
 			//	var instances = M.Autocomplete.init(elems, options);
 			//   });
 			//var ctx = document.getElementBy("myChart").getContext('2d');
-			var ctx1 = shadow.querySelector('#myChart');
+			//var ctx1 = shadow.querySelector('#myChart');
 			var ctx = ctx1.getContext('2d');
 			//querySelector('#myChart').getContext('2d');
 				var myChart = new Chart(ctx1, {
@@ -196,13 +196,13 @@
 				return this.dim;
 			}
 
-//}; //end of class
-})();
-}); //end of function
+}; //end of class
+//})();
+//}); //end of function
 
 	/* Define web component - input: tag and class */
- //	customElements.define('com-iprosis-sample-search', ISearch);
- //})();
+ 	customElements.define('com-iprosis-sample-search', ISearch);
+ })();
 	// d3Script.onload = () => 
     // customElements.define('com-iprosis-search', class ISearch extends HTMLElement {
 
